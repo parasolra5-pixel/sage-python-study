@@ -1,92 +1,123 @@
 [
-    {
-        "category": "01_basics",
-        "topic": "variables",
-        "description": "Python 변수 기본 예제",
-        "level": "beginner",
-        "path": "01_basics/variables",
-        "files": [
-            "001_variable_create.py",
-            "002_variable_change.py",
-            "003_multiple_variables.py"
-        ]
-    },
-    {
-        "category": "01_basics",
-        "topic": "comments",
-        "description": "Python 주석 기본 예제",
-        "level": "beginner",
-        "path": "01_basics/comments",
-        "files": [
-            "001_single_line_comment.py",
-            "002_comment_out_code.py",
-            "003_multi_line_notes.py"
-        ]
-    },
-    {
-        "category": "01_basics",
-        "topic": "input_output",
-        "description": "Python 출력과 입력 기본 예제",
-        "level": "beginner",
-        "path": "01_basics/input_output",
-        "files": [
-            "001_print_text.py",
-            "002_print_variables.py",
-            "003_input_name.py",
-            "004_input_number.py"
-        ]
-    },
-    {
-        "category": "01_basics",
-        "topic": "operators",
-        "description": "Python 연산자 기본 예제",
-        "level": "beginner",
-        "path": "01_basics/operators",
-        "files": [
-            "001_add_subtract.py",
-            "002_multiply_divide.py",
-            "003_comparison_operators.py",
-            "004_remainder_and_power.py"
-        ]
-    },
-    {
-        "category": "02_strings",
-        "topic": "creation",
-        "description": "Python 문자열 만들기 예제",
-        "level": "beginner",
-        "path": "02_strings/creation",
-        "files": ["001_create_string.py", "002_quotes_in_string.py", "003_multiline_string.py"]
-    },
-    {
-        "category": "02_strings",
-        "topic": "formatting",
-        "description": "Python 문자열 꾸미기 예제",
-        "level": "beginner",
-        "path": "02_strings/formatting",
-        "files": ["001_join_strings.py", "002_f_string.py", "003_change_case.py"]
-    },
-    {
-        "category": "02_strings",
-        "topic": "indexing",
-        "description": "Python 문자열 인덱싱 예제",
-        "level": "beginner",
-        "path": "02_strings/indexing",
-        "files": ["001_first_character.py", "002_character_positions.py", "003_last_character.py"]
-    },
-    {
-        "category": "02_strings",
-        "topic": "length",
-        "description": "Python 문자열 길이 예제",
-        "level": "beginner",
-        "path": "02_strings/length",
-        "files": ["001_string_length.py", "002_length_with_space.py"]
-    },
-    {
-        "category": "02_strings",
-        "topic": "slicing",
-        "description": "Python 문자열 슬라이싱 예제",
-        "level": "beginner",
-        "path": "02_strings/slicing",
-        "files": ["001_slice_start_end.py", "002_slice_from_start.py", "003_slice_to_end.py", "004_slice_step.py"]
-    }
+  {
+    "category": "01_basics",
+    "topic": "variables",
+    "description": "Python 변수 기본 예제",
+    "level": "beginner",
+    "path": "01_basics/variables",
+    "files": [
+      "001_variable_create.py",
+      "002_variable_change.py",
+      "003_multiple_variables.py"
+    ]
+  },
+  {
+    "category": "01_basics",
+    "topic": "comments",
+    "description": "Python 주석 기본 예제",
+    "level": "beginner",
+    "path": "01_basics/comments",
+    "files": [
+      "001_single_line_comment.py",
+      "002_comment_out_code.py",
+      "003_multi_line_notes.py"
+    ]
+  },
+  {
+    "category": "01_basics",
+    "topic": "input_output",
+    "description": "Python 출력과 입력 기본 예제",
+    "level": "beginner",
+    "path": "01_basics/input_output",
+    "files": [
+      "001_print_text.py",
+      "002_print_variables.py",
+      "003_input_name.py",
+      "004_input_number.py"
+    ]
+  },
+  {
+    "category": "01_basics",
+    "topic": "operators",
+    "description": "Python 연산자 기본 예제",
+    "level": "beginner",
+    "path": "01_basics/operators",
+    "files": [
+      "001_add_subtract.py",
+      "002_multiply_divide.py",
+      "003_comparison_operators.py",
+      "004_remainder_and_power.py"
+    ]
+  },
+  {
+    "category": "02_strings",
+    "topic": "creation",
+    "description": "Python 문자열 만들기 예제",
+    "level": "beginner",
+    "path": "02_strings/creation",
+    "files": [
+      "001_create_string.py",
+      "002_quotes_in_string.py",
+      "003_multiline_string.py"
+    ]
+  },
+  {
+    "category": "02_strings",
+    "topic": "formatting",
+    "description": "Python 문자열 꾸미기 예제",
+    "level": "beginner",
+    "path": "02_strings/formatting",
+    "files": [
+      "001_join_strings.py",
+      "002_f_string.py",
+      "003_change_case.py"
+    ]
+  },
+  {
+    "category": "02_strings",
+    "topic": "indexing",
+    "description": "Python 문자열 인덱싱 예제",
+    "level": "beginner",
+    "path": "02_strings/indexing",
+    "files": [
+      "001_first_character.py",
+      "002_character_positions.py",
+      "003_last_character.py"
+    ]
+  },
+  {
+    "category": "02_strings",
+    "topic": "length",
+    "description": "Python 문자열 길이 예제",
+    "level": "beginner",
+    "path": "02_strings/length",
+    "files": [
+      "001_string_length.py",
+      "002_length_with_space.py"
+    ]
+  },
+  {
+    "category": "02_strings",
+    "topic": "slicing",
+    "description": "Python 문자열 슬라이싱 예제",
+    "level": "beginner",
+    "path": "02_strings/slicing",
+    "files": [
+      "001_slice_start_end.py",
+      "002_slice_from_start.py",
+      "003_slice_to_end.py",
+      "004_slice_step.py"
+    ]
+  },
+  {
+    "category": "03_numbers",
+    "topic": "integer",
+    "description": "정수 값을 만들고 기본 계산을 하는 예제입니다.",
+    "level": "beginner",
+    "path": "03_numbers/integer",
+    "files": [
+      "001_create_integer.py",
+      "002_integer_calculation.py"
+    ]
+  }
 ]

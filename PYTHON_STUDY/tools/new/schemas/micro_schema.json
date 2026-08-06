@@ -1,13 +1,92 @@
 {
-  "name": "ONA Micro Example",
-  "structure": {
-    "category": "",
-    "topic": "",
-    "examples": []
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ONA Micro Example Metadata v1.0",
+  "description": "Schema for final Topic metadata.json files. Template-only starter_code is not allowed here.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "category",
+    "topic",
+    "title",
+    "description",
+    "level",
+    "prerequisites",
+    "learning_objectives",
+    "examples"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^\\d{2}_[a-z0-9_]+$"
+    },
+    "topic": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "level": {
+      "enum": ["beginner", "intermediate", "advanced"]
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "uniqueItems": true
+    },
+    "learning_objectives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "examples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["order", "id", "file", "title", "goal", "interactive"],
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "file": {
+            "type": "string",
+            "pattern": "^\\d{3}_[a-z0-9_]+\\.py$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "goal": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interactive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
   },
-  "files": {
-    "python": true,
-    "readme": true,
-    "metadata": true
-  }
+  "additionalProperties": false
 }

@@ -1,314 +1,264 @@
-import os
+import argparse
 import json
+import re
+from pathlib import Path
 
 
-CURRENT_DIR = os.path.dirname(
-    os.path.abspath(__file__)
-)
+CURRENT_DIR = Path(__file__).resolve().parent
+BASE_PATH = CURRENT_DIR.parent.parent / "micro_examples"
+INDEX_FILE = BASE_PATH / "index.json"
+SCHEMA_FILE = CURRENT_DIR / "schemas" / "micro_schema.json"
+
+CATEGORY_PATTERN = re.compile(r"^\d{2}_[a-z0-9_]+$")
+NAME_PATTERN = re.compile(r"^[a-z0-9_]+$")
+FILE_PATTERN = re.compile(r"^\d{3}_[a-z0-9_]+\.py$")
+LEVELS = {"beginner", "intermediate", "advanced"}
 
 
-BASE_PATH = os.path.abspath(
-    os.path.join(
-        CURRENT_DIR,
-        "../../micro_examples"
-    )
-)
+def load_json(path):
+    with path.open("r", encoding="utf-8") as file:
+        return json.load(file)
 
 
-INDEX_FILE = os.path.join(
-    BASE_PATH,
-    "index.json"
-)
+def require_keys(data, keys, label):
+    missing = [key for key in keys if key not in data]
+    if missing:
+        raise ValueError(f"{label}에 필수 항목이 없습니다: {', '.join(missing)}")
 
 
-def create_structure(template_file):
+def validate_template(data):
+    required = [
+        "schema_version",
+        "category",
+        "topic",
+        "title",
+        "description",
+        "level",
+        "prerequisites",
+        "learning_objectives",
+        "examples",
+    ]
+    require_keys(data, required, "템플릿")
 
-    with open(
-        template_file,
-        "r",
-        encoding="utf-8"
-    ) as file:
+    if data["schema_version"] != "1.0":
+        raise ValueError("현재 생성기는 schema_version 1.0만 지원합니다.")
+    if not CATEGORY_PATTERN.fullmatch(data["category"]):
+        raise ValueError("category는 03_numbers와 같은 형식이어야 합니다.")
+    if not NAME_PATTERN.fullmatch(data["topic"]):
+        raise ValueError("topic은 영어 snake_case여야 합니다.")
+    if data["level"] not in LEVELS:
+        raise ValueError("level은 beginner, intermediate, advanced 중 하나여야 합니다.")
+    if not isinstance(data["prerequisites"], list):
+        raise ValueError("prerequisites는 목록이어야 합니다.")
+    if not isinstance(data["learning_objectives"], list) or not data["learning_objectives"]:
+        raise ValueError("learning_objectives는 비어 있지 않은 목록이어야 합니다.")
+    if not isinstance(data["examples"], list) or not data["examples"]:
+        raise ValueError("examples는 비어 있지 않은 목록이어야 합니다.")
 
-        data = json.load(file)
+    orders = set()
+    ids = set()
+    files = set()
 
+    for example in data["examples"]:
+        require_keys(
+            example,
+            ["order", "id", "file", "title", "goal", "interactive"],
+            "예제",
+        )
+        if not isinstance(example["order"], int) or example["order"] < 1:
+            raise ValueError("예제 order는 1 이상의 정수여야 합니다.")
+        if not NAME_PATTERN.fullmatch(example["id"]):
+            raise ValueError("예제 id는 영어 snake_case여야 합니다.")
+        if not FILE_PATTERN.fullmatch(example["file"]):
+            raise ValueError("예제 file은 001_example.py 형식이어야 합니다.")
+        expected_file = f"{example['order']:03d}_{example['id']}.py"
+        if example["file"] != expected_file:
+            raise ValueError(f"예제 file은 order와 id에 맞아야 합니다: {expected_file}")
+        if not isinstance(example["interactive"], bool):
+            raise ValueError("예제 interactive는 true 또는 false여야 합니다.")
+        if example["order"] in orders or example["id"] in ids or example["file"] in files:
+            raise ValueError("예제 order, id, file은 중복될 수 없습니다.")
 
-    category = data["category"]
-    topic = data["topic"]
-    examples = data["examples"]
-
-
-    target_path = os.path.join(
-        BASE_PATH,
-        category,
-        topic
-    )
-
-
-    os.makedirs(
-        target_path,
-        exist_ok=True
-    )
-
-
-    create_python_files(
-        target_path,
-        examples
-    )
-
-
-    create_readme(
-        target_path,
-        data
-    )
-
-
-    create_metadata(
-        target_path,
-        data
-    )
-
-
-    update_index(
-        target_path,
-        data
-    )
+        orders.add(example["order"])
+        ids.add(example["id"])
+        files.add(example["file"])
 
 
+def build_metadata(data):
+    metadata = {key: value for key, value in data.items() if key != "examples"}
+    metadata["examples"] = []
 
-def create_python_files(path, examples):
-
-    for index, example in enumerate(
-        examples,
-        start=1
-    ):
-
-        filename = (
-            f"{index:03d}_{example}.py"
+    for example in sorted(data["examples"], key=lambda item: item["order"]):
+        metadata["examples"].append(
+            {key: value for key, value in example.items() if key != "starter_code"}
         )
 
+    return metadata
 
-        filepath = os.path.join(
-            path,
-            filename
+
+def validate_metadata(metadata):
+    schema = load_json(SCHEMA_FILE)
+    require_keys(metadata, schema["required"], "metadata")
+
+    unexpected_keys = set(metadata) - set(schema["properties"])
+    if unexpected_keys:
+        raise ValueError(
+            "metadata에 표준에 없는 항목이 있습니다: "
+            + ", ".join(sorted(unexpected_keys))
         )
 
+    if metadata["schema_version"] != schema["properties"]["schema_version"]["const"]:
+        raise ValueError("metadata schema_version이 schema와 다릅니다.")
+    if not CATEGORY_PATTERN.fullmatch(metadata["category"]):
+        raise ValueError("metadata category 형식이 올바르지 않습니다.")
+    if not NAME_PATTERN.fullmatch(metadata["topic"]):
+        raise ValueError("metadata topic 형식이 올바르지 않습니다.")
+    if metadata["level"] not in schema["properties"]["level"]["enum"]:
+        raise ValueError("metadata level이 올바르지 않습니다.")
 
-        if not os.path.exists(filepath):
-
-            with open(
-                filepath,
-                "w",
-                encoding="utf-8"
-            ) as file:
-
-                file.write(
-                    f"# {example}\n\n"
-                    "print('ONA Micro Example')\n"
-                )
-
-            print(
-                f"생성 완료: {filepath}"
+    example_schema = schema["properties"]["examples"]["items"]
+    for example in metadata["examples"]:
+        require_keys(example, example_schema["required"], "metadata 예제")
+        unexpected_example_keys = set(example) - set(example_schema["properties"])
+        if unexpected_example_keys:
+            raise ValueError(
+                "metadata 예제에 표준에 없는 항목이 있습니다: "
+                + ", ".join(sorted(unexpected_example_keys))
             )
+        if not FILE_PATTERN.fullmatch(example["file"]):
+            raise ValueError("metadata 예제 file 형식이 올바르지 않습니다.")
 
 
-        else:
+def create_python_files(target_path, examples):
+    for example in sorted(examples, key=lambda item: item["order"]):
+        file_path = target_path / example["file"]
 
-            print(
-                f"이미 존재: {filepath}"
-            )
+        if file_path.exists():
+            print(f"이미 존재: {file_path}")
+            continue
+
+        starter_code = example.get("starter_code")
+        if not starter_code:
+            starter_code = f"# {example['title']}\n# 목표: {example['goal']}\n\nprint('ONA Micro Example')\n"
+
+        file_path.write_text(starter_code, encoding="utf-8")
+        print(f"생성 완료: {file_path}")
 
 
+def create_readme(target_path, data):
+    file_path = target_path / "README.md"
 
-def create_readme(path, data):
+    if file_path.exists():
+        print(f"이미 존재: {file_path}")
+        return
 
-    filepath = os.path.join(
-        path,
-        "README.md"
+    prerequisites = data["prerequisites"] or ["없음"]
+    examples = sorted(data["examples"], key=lambda item: item["order"])
+
+    lines = [
+        f"# {data['topic']}",
+        "",
+        "## 학습 목표",
+        *[f"- {item}" for item in data["learning_objectives"]],
+        "",
+        "## 선수 지식",
+        *[f"- {item}" for item in prerequisites],
+        "",
+        "## 학습 순서",
+        *[f"{item['order']}. {item['title']}" for item in examples],
+        "",
+        "## 예제 목록",
+        *[f"- `{item['file']}`: {item['goal']}" for item in examples],
+        "",
+        "## 난이도",
+        data["level"],
+        "",
+        "ONA Micro Example",
+        "",
+    ]
+
+    file_path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"README 생성 완료: {file_path}")
+
+
+def create_metadata(target_path, metadata):
+    file_path = target_path / "metadata.json"
+
+    if file_path.exists():
+        print(f"이미 존재: {file_path}")
+        return
+
+    file_path.write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
     )
+    print(f"metadata 생성 완료: {file_path}")
 
 
-    if not os.path.exists(filepath):
-
-        with open(
-            filepath,
-            "w",
-            encoding="utf-8"
-        ) as file:
-
-            file.write(
-f"""# {data['topic']}
-
-설명:
-{data['description']}
-
-난이도:
-{data['level']}
-
-ONA Micro Example
-"""
-            )
-
-        print(
-            "README 생성 완료"
-        )
-
-
-
-def create_metadata(path, data):
-
-    filepath = os.path.join(
-        path,
-        "metadata.json"
-    )
-
-
-    if not os.path.exists(filepath):
-
-        metadata = {
-
-            "category":
-                data["category"],
-
-            "topic":
-                data["topic"],
-
-            "description":
-                data["description"],
-
-            "level":
-                data["level"],
-
-            "examples":
-                data["examples"]
-
-        }
-
-
-        with open(
-            filepath,
-            "w",
-            encoding="utf-8"
-        ) as file:
-
-            json.dump(
-                metadata,
-                file,
-                ensure_ascii=False,
-                indent=4
-            )
-
-
-        print(
-            "metadata 생성 완료"
-        )
-
-
-
-
-
-def update_index(path, data):
-
-    if os.path.exists(INDEX_FILE):
-
+def update_index(target_path, metadata):
+    if INDEX_FILE.exists():
         try:
-
-            with open(
-                INDEX_FILE,
-                "r",
-                encoding="utf-8"
-            ) as file:
-
-                index = json.load(file)
-
-
+            index = load_json(INDEX_FILE)
         except json.JSONDecodeError:
-
-            print(
-                "index.json 오류 발견 → 새로 생성합니다"
-            )
-
+            print("index.json 오류 발견 → 새 배열로 생성합니다.")
             index = []
-
-
     else:
-
         index = []
 
+    if not isinstance(index, list):
+        raise ValueError("현재 index.json은 배열 구조여야 합니다.")
 
-    relative_path = os.path.relpath(
-        path,
-        BASE_PATH
-    )
-
-
-    files = []
-
-    for filename in os.listdir(path):
-
-        if filename.endswith(".py"):
-
-            files.append(filename)
-
-
+    relative_path = target_path.relative_to(BASE_PATH).as_posix()
     item = {
-
-        "category":
-            data["category"],
-
-        "topic":
-            data["topic"],
-
-        "description":
-            data["description"],
-
-        "level":
-            data["level"],
-
-        "path":
-            relative_path.replace("\\", "/"),
-
-        "files":
-            files
-
+        "category": metadata["category"],
+        "topic": metadata["topic"],
+        "description": metadata["description"],
+        "level": metadata["level"],
+        "path": relative_path,
+        "files": [example["file"] for example in metadata["examples"]],
     }
 
-
-    updated = False
-
-
-    for old in index:
-
-        if old["path"] == item["path"]:
-
-            old.update(item)
-
-            updated = True
-
-
-    if not updated:
-
+    for position, old_item in enumerate(index):
+        if old_item.get("path") == relative_path:
+            index[position] = item
+            break
+    else:
         index.append(item)
 
-
-    with open(
-        INDEX_FILE,
-        "w",
-        encoding="utf-8"
-    ) as file:
-
-        json.dump(
-            index,
-            file,
-            ensure_ascii=False,
-            indent=4
-        )
-
-
-    print(
-        "index.json 업데이트 완료"
+    INDEX_FILE.write_text(
+        json.dumps(index, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
     )
+    print("index.json 업데이트 완료")
+
+
+def create_structure(template_path):
+    data = load_json(template_path)
+    validate_template(data)
+
+    metadata = build_metadata(data)
+    validate_metadata(metadata)
+
+    target_path = BASE_PATH / data["category"] / data["topic"]
+    target_path.mkdir(parents=True, exist_ok=True)
+
+    create_python_files(target_path, data["examples"])
+    create_readme(target_path, data)
+    create_metadata(target_path, metadata)
+    update_index(target_path, metadata)
+
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Create an ONA Micro Example Topic.")
+    parser.add_argument(
+        "--template",
+        type=Path,
+        default=CURRENT_DIR / "micro_template.json",
+        help="Path to a Micro Example template JSON file.",
+    )
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
-
-    create_structure(
-        "micro_template.json"
-    )
+    arguments = parse_arguments()
+    create_structure(arguments.template.resolve())
