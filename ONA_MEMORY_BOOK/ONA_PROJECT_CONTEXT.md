@@ -261,3 +261,26 @@ ONA 프로젝트는 단순한 Python 학습 도구에서
 하나의 지식 라이브러리로 성장하는
 
 ONA Knowledge System의 기반을 만들었다.
+
+# ONA Project Continuation
+
+## 프로젝트
+
+Sage & ONA Project
+
+Repository:
+sage-python-study
+
+## 현재 핵심 방향
+
+ONA는 Python 예제 모음이 아니라,
+사람과 AI가 함께 성장하는 구조화된 지식 시스템을 만드는 프로젝트.
+
+원칙:
+
+- 이해를 먼저 한다.
+- 작은 것부터 만든다.
+- 필요한 것은 직접 만든다.
+- 모든 프로젝트는 기록한다.
+
+---

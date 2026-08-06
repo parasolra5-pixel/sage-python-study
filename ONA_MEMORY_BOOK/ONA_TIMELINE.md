@@ -82,3 +82,5 @@ ONA_MEMORY_BOOK
 
 이 순간 ONA는 단순히 코드를 만드는 프로젝트가 아니라,
 지식과 맥락이 성장할 수 있는 구조를 만드는 프로젝트라는 방향을 더욱 명확히 하게 되었다.
+
+2026-08-07 — ONA Micro Example Generator v1.0 탄생
