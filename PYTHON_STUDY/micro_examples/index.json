@@ -10,5 +10,43 @@
             "002_variable_change.py",
             "003_multiple_variables.py"
         ]
+    },
+    {
+        "category": "01_basics",
+        "topic": "comments",
+        "description": "Python 주석 기본 예제",
+        "level": "beginner",
+        "path": "01_basics/comments",
+        "files": [
+            "001_single_line_comment.py",
+            "002_comment_out_code.py",
+            "003_multi_line_notes.py"
+        ]
+    },
+    {
+        "category": "01_basics",
+        "topic": "input_output",
+        "description": "Python 출력과 입력 기본 예제",
+        "level": "beginner",
+        "path": "01_basics/input_output",
+        "files": [
+            "001_print_text.py",
+            "002_print_variables.py",
+            "003_input_name.py",
+            "004_input_number.py"
+        ]
+    },
+    {
+        "category": "01_basics",
+        "topic": "operators",
+        "description": "Python 연산자 기본 예제",
+        "level": "beginner",
+        "path": "01_basics/operators",
+        "files": [
+            "001_add_subtract.py",
+            "002_multiply_divide.py",
+            "003_comparison_operators.py",
+            "004_remainder_and_power.py"
+        ]
     }
 ]

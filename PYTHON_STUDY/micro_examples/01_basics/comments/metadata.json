@@ -1,0 +1,11 @@
+{
+    "category": "01_basics",
+    "topic": "comments",
+    "description": "Python 주석 기본 예제",
+    "level": "beginner",
+    "examples": [
+        "single_line_comment",
+        "comment_out_code",
+        "multi_line_notes"
+    ]
+}

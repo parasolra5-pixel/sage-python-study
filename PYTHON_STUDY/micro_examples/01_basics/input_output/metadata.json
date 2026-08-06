@@ -1,0 +1,12 @@
+{
+    "category": "01_basics",
+    "topic": "input_output",
+    "description": "Python 출력과 입력 기본 예제",
+    "level": "beginner",
+    "examples": [
+        "print_text",
+        "print_variables",
+        "input_name",
+        "input_number"
+    ]
+}
