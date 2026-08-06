@@ -81,7 +81,6 @@ ONA Mini Python은
 복잡한 프로그램을 만드는 것보다
 작은 예제를 이해하고 조합하는 힘을 기르는 것을 목표로 한다.
 
-
 🌌 ONA Language Charter (초안)
 
 첫 번째 원칙

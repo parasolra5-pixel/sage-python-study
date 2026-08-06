@@ -1,0 +1,105 @@
+{
+  "project": "ONA Project",
+  "repository": "sage-python-study",
+
+  "description": "Human-AI collaborative learning project and knowledge system.",
+
+  "current_stage": {
+    "name": "Micro Example Knowledge System",
+    "status": "active",
+    "description": "Building a structured Python knowledge library using small learning examples."
+  },
+
+  "completed": [
+    {
+      "date": "2026-08-06",
+      "items": [
+        "ONA Memory Book structure created",
+        "ONA_CORE_MEMORY.md organized",
+        "ONA_PROJECT_CONTEXT.md structure established",
+        "Python study folder organization completed",
+        "micro_template.json created",
+        "create_micro_structure.py developed",
+        "Automatic Python example generation system completed",
+        "index.json knowledge registry implemented"
+      ]
+    }
+  ],
+
+  "current_work": [
+    {
+      "task": "ONA Documentation Structure Refinement",
+      "description": "Separating philosophy, history, context, and current status documents."
+    },
+    {
+      "task": "Micro Example System Expansion",
+      "description": "Adding more Python beginner examples."
+    },
+    {
+      "task": "Context Recovery System",
+      "description": "Creating a structure where humans and AI can restore project context without depending on previous memory."
+    }
+  ],
+
+  "next_steps": [
+    {
+      "priority": 1,
+      "name": "Expand Micro Examples",
+      "path": "PYTHON_STUDY/micro_examples",
+      "items": [
+        "01_basics/variables",
+        "01_basics/comments",
+        "01_basics/input_output",
+        "01_basics/operators"
+      ]
+    },
+
+    {
+      "priority": 2,
+      "name": "Improve Template System",
+      "description": "Extend micro_template.json for different learning categories."
+    },
+
+    {
+      "priority": 3,
+      "name": "Develop ONA Loader",
+      "description": "Read index.json and display Python knowledge structure inside ONA Mini Python UI."
+    },
+    {
+      "priority": 4,
+      "name": "Change Review System",
+      "description": "Compare repository changes with documents and suggest required updates."
+    }
+  ],
+
+  "architecture": {
+    "ONA_MEMORY_BOOK": {
+      "role": "Project philosophy, decisions, and growth records"
+    },
+
+    "PYTHON_STUDY": {
+      "role": "Structured Python knowledge library"
+    },
+
+    "ONA_Mini_Python": {
+      "role": "Learning interface and user interaction system"
+    }
+  },
+
+  "context_recovery_flow": [
+    "README.md",
+    "ONA_CONTEXT.md",
+    "ONA_MEMORY_BOOK/ONA_STATUS.json",
+    "ONA_MEMORY_BOOK"
+  ],
+
+  "principles": [
+    "Start small",
+    "Understand principles",
+    "Record failures",
+    "Improve continuously",
+    "Share knowledge"
+  ],
+
+  "last_update": "2026-08-06"
+}

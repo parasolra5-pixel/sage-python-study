@@ -1,0 +1,14 @@
+[
+    {
+        "category": "01_basics",
+        "topic": "variables",
+        "description": "Python 변수 기본 예제",
+        "level": "beginner",
+        "path": "01_basics/variables",
+        "files": [
+            "001_variable_create.py",
+            "002_variable_change.py",
+            "003_multiple_variables.py"
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "ONA Micro Example",
+  "structure": {
+    "category": "",
+    "topic": "",
+    "examples": []
+  },
+  "files": {
+    "python": true,
+    "readme": true,
+    "metadata": true
+  }
+}
