@@ -1,0 +1,10 @@
+{
+    "category": "02_strings",
+    "topic": "length",
+    "description": "Python 문자열 길이 예제",
+    "level": "beginner",
+    "examples": [
+        "string_length",
+        "length_with_space"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "category": "02_strings",
+    "topic": "formatting",
+    "description": "Python 문자열 꾸미기 예제",
+    "level": "beginner",
+    "examples": [
+        "join_strings",
+        "f_string",
+        "change_case"
+    ]
+}

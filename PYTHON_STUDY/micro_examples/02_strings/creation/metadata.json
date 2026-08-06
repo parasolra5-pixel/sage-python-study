@@ -1,0 +1,11 @@
+{
+    "category": "02_strings",
+    "topic": "creation",
+    "description": "Python 문자열 만들기 예제",
+    "level": "beginner",
+    "examples": [
+        "create_string",
+        "quotes_in_string",
+        "multiline_string"
+    ]
+}

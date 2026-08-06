@@ -1,0 +1,12 @@
+{
+    "category": "02_strings",
+    "topic": "slicing",
+    "description": "Python 문자열 슬라이싱 예제",
+    "level": "beginner",
+    "examples": [
+        "slice_start_end",
+        "slice_from_start",
+        "slice_to_end",
+        "slice_step"
+    ]
+}

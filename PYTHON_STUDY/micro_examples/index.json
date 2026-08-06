@@ -48,5 +48,45 @@
             "003_comparison_operators.py",
             "004_remainder_and_power.py"
         ]
+    },
+    {
+        "category": "02_strings",
+        "topic": "creation",
+        "description": "Python 문자열 만들기 예제",
+        "level": "beginner",
+        "path": "02_strings/creation",
+        "files": ["001_create_string.py", "002_quotes_in_string.py", "003_multiline_string.py"]
+    },
+    {
+        "category": "02_strings",
+        "topic": "formatting",
+        "description": "Python 문자열 꾸미기 예제",
+        "level": "beginner",
+        "path": "02_strings/formatting",
+        "files": ["001_join_strings.py", "002_f_string.py", "003_change_case.py"]
+    },
+    {
+        "category": "02_strings",
+        "topic": "indexing",
+        "description": "Python 문자열 인덱싱 예제",
+        "level": "beginner",
+        "path": "02_strings/indexing",
+        "files": ["001_first_character.py", "002_character_positions.py", "003_last_character.py"]
+    },
+    {
+        "category": "02_strings",
+        "topic": "length",
+        "description": "Python 문자열 길이 예제",
+        "level": "beginner",
+        "path": "02_strings/length",
+        "files": ["001_string_length.py", "002_length_with_space.py"]
+    },
+    {
+        "category": "02_strings",
+        "topic": "slicing",
+        "description": "Python 문자열 슬라이싱 예제",
+        "level": "beginner",
+        "path": "02_strings/slicing",
+        "files": ["001_slice_start_end.py", "002_slice_from_start.py", "003_slice_to_end.py", "004_slice_step.py"]
     }
 ]

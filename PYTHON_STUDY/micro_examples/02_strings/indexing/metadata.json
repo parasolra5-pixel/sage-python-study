@@ -1,0 +1,11 @@
+{
+    "category": "02_strings",
+    "topic": "indexing",
+    "description": "Python 문자열 인덱싱 예제",
+    "level": "beginner",
+    "examples": [
+        "first_character",
+        "character_positions",
+        "last_character"
+    ]
+}
