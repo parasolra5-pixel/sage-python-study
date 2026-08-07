@@ -25,7 +25,6 @@ ONA 프로젝트는 특정 사람이나 특정 AI의 기억에 의존하지 않�
 
 새로운 사람이나 AI는 아래 순서대로 프로젝트를 확인한다.
 
-
 GitHub Repository
 
     ↓
@@ -61,7 +60,6 @@ ONA_MEMORY_BOOK
     ↓
 
 현재 프로젝트 맥락 복원 완료
-
 
 ---
 
@@ -138,25 +136,19 @@ ONA는 사람과 AI 사이의
 
 기존의 대화와 결정 과정은:
 
-
 ONA_MEMORY_BOOK
-
 
 에 기록한다.
 
 현재 프로젝트 상태는:
 
-
 ONA_MEMORY_BOOK/ONA_STATUS.json
-
 
 에서 관리한다.
 
 프로젝트의 방향과 변화 이유는:
 
-
 ONA_MEMORY_BOOK/ONA_PROJECT_CONTEXT.md
-
 
 에서 관리한다.
 
@@ -197,9 +189,7 @@ ONA 프로젝트의 전체 소개
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_STATUS.json
-
 
 역할:
 
@@ -222,9 +212,7 @@ ONA_MEMORY_BOOK/ONA_STATUS.json
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_PROJECT_CONTEXT.md
-
 
 역할:
 
@@ -240,9 +228,7 @@ ONA_MEMORY_BOOK/ONA_PROJECT_CONTEXT.md
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_CORE_MEMORY.md
-
 
 역할:
 
@@ -270,9 +256,7 @@ ONA의 철학과 핵심 가치 기록
 
 위치:
 
-
 ONA_MEMORY_BOOK/appendix
-
 
 역할:
 
@@ -288,9 +272,7 @@ ONA_MEMORY_BOOK/appendix
 
 위치:
 
-
 ONA_MEMORY_BOOK/appendix
-
 
 역할:
 
@@ -327,9 +309,7 @@ GitHub Repository
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_STATUS.json
-
 
 예:
 
@@ -343,9 +323,7 @@ ONA_MEMORY_BOOK/ONA_STATUS.json
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_PROJECT_CONTEXT.md
-
 
 예:
 
@@ -358,9 +336,7 @@ ONA_MEMORY_BOOK/ONA_PROJECT_CONTEXT.md
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_CORE_MEMORY.md
-
 
 예:
 
@@ -373,9 +349,7 @@ ONA_MEMORY_BOOK/ONA_CORE_MEMORY.md
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_MEMORY_BOOK.md
-
 
 예:
 
@@ -389,9 +363,7 @@ ONA_MEMORY_BOOK/ONA_MEMORY_BOOK.md
 
 위치:
 
-
 ONA_MEMORY_BOOK/ONA_TIMELINE.md
-
 
 예:
 
@@ -408,7 +380,6 @@ ONA는 단순한 코드 저장소에서
 
 방향:
 
-
 작은 코드 예제
 
 ↓
@@ -423,13 +394,11 @@ ONA는 단순한 코드 저장소에서
 
 사람과 AI가 함께 사용하는 학습 시스템
 
-
 ---
 
 # 7. Related Documents
 
 프로젝트를 이해하려면:
-
 
 README.md
 
@@ -449,10 +418,33 @@ ONA_MEMORY_BOOK/ONA_PROJECT_CONTEXT.md
 
 ONA_MEMORY_BOOK
 
-
 순서로 확인한다.
 
 ---
+
+# 8. Current Project Status
+
+현재 가장 활발하게 진행 중인 프로젝트:
+
+## PYTHON_STUDY
+
+목표:
+
+Python 문법을 Micro Example 단위로 구조화하여
+AI와 사람이 함께 활용할 수 있는 학습 라이브러리를 만드는 것.
+
+현재 방향:
+
+- micro_examples 구조 구축
+- metadata 기반 관리
+- index.json 연결
+- 자동 생성기 개발
+- ONA Mini Python 연결
+
+핵심 철학:
+
+작은 코드 블록을 조합하여
+Python 학습과 프로그램 설계를 돕는 시스템 구축.
 
 # Last Update
 
