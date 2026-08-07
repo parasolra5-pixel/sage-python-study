@@ -753,3 +753,4 @@ Continuous Collaboration
 ONA_MEMORY_BOOK의 문서 역할과 기록 영역을 재구성하고, 00_START부터 07_APPENDIX까지의 계층 구조를 정립했다. 기존 appendix, conversations, daily_memory 등의 기록 영역을 역할에 맞게 재배치하여 새로운 AI가 프로젝트 맥락을 안정적으로 복원할 수 있는 기반을 마련했다.
 
 🌱 Made with ❤️ by Sage & ONA AI
+2026-08-08 — ONA Memory System v2.0 구조 정리 및 Context Recovery 문서 아키텍처 확립
