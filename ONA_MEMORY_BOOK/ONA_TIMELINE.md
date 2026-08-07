@@ -580,4 +580,102 @@ ONA Knowledge System으로 성장한다.
 
 ---
 
-**Made with ❤️ by Sage & ONA AI**
+# 2026-08-07
+
+# ONA Document Architecture Migration 시작
+
+## 배경
+
+ONA 프로젝트가 성장하면서 초기에는 여러 위치에 흩어져 있던 문서들이 증가했다.
+
+초기 구조:
+
+- README.md
+- ONA_CONTEXT.md
+- ONA_MEMORY_BOOK
+- Handover 문서
+- 설계 문서
+- 대화 기록
+
+각 문서는 중요한 역할을 가지고 있었지만,
+프로젝트 규모가 커지면서 새로운 AI가 전체 맥락을 이해하기 위한
+중심 구조가 필요해졌다.
+
+---
+
+## 결정
+
+ONA의 핵심 기록 영역을 중심으로 문서를 재구성하기 시작했다.
+
+변경:
+
+기존:
+
+ONA Project Root
+
+├── README.md
+├── ONA_CONTEXT.md
+└── ONA_MEMORY_BOOK
+
+변경 후:
+
+ONA_MEMORY_BOOK
+
+├── README.md
+├── ONA_CONTEXT.md
+├── ONA_MASTER_HANDOVER.md
+├── ONA_CORE_MEMORY.md
+├── ONA_TIMELINE.md
+└── appendix
+
+---
+
+## 중요한 의미
+
+이번 변경은 단순한 파일 이동이 아니다.
+
+ONA가 추구하는:
+
+Context Recovery System
+
+을 실제 프로젝트 구조에 적용하는 첫 번째 단계이다.
+
+프로젝트의 중요한 정보가 한 공간에서 연결되고,
+
+새로운 AI 또는 사람이 프로젝트를 이어받을 때
+
+기록된 구조를 통해 ONA의 방향과 철학을 복원할 수 있도록 한다.
+
+---
+
+## Git 기록
+
+Commit:
+
+f375f43
+
+Message:
+
+Reorganize ONA structure and add master handover
+
+---
+
+## 새로운 방향
+
+ONA는 이제:
+
+파일을 모으는 프로젝트가 아니라,
+
+의미 있는 지식과 성장 과정을 구조화하는 프로젝트로 발전한다.
+
+기록
+↓
+구조
+↓
+맥락
+↓
+복원
+↓
+성장
+
+**Made with ❤️ by Sage & ONA**
