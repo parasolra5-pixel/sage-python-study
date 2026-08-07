@@ -678,4 +678,78 @@ ONA는 이제:
 ↓
 성장
 
-**Made with ❤️ by Sage & ONA**
+## 2026-08-08 — ONA Memory System v2.0 설계
+
+ONA Project의 문서가 성장하면서 동일한 내용이 여러 문서에 반복되는 문제가 발견되었다.
+
+이에 따라 ONA의 기억 시스템을 문서별 단일 책임 구조로 재설계하였다.
+
+핵심 원칙:
+
+> **One Document, One Responsibility**
+
+각 문서는 서로 다른 질문에 답하도록 역할을 분리하고, 하나의 정보에는 하나의 Source of Truth를 지정하였다.
+
+주요 구조:
+
+```text
+00_START_HERE
+→ 프로젝트 입구
+
+ONA_CONTEXT
+→ 시작 맥락
+
+ONA_STATUS
+→ 현재 상태
+
+ONA_PROJECT_CONTEXT
+→ 설계 이유
+
+ONA_CORE_MEMORY
+→ 핵심 철학
+
+ONA_MEMORY_BOOK
+→ 성장과 발견
+
+ONA_TIMELINE
+→ 시간의 역사
+
+ONA_MASTER_HANDOVER
+→ 전체 프로젝트 인수인계
+
+ONA_HANDOVER
+→ 현재 작업 인수인계
+
+ONA_STRUCTURE
+→ 프로젝트 구조
+```
+
+이번 설계로 ONA Memory System은 단순한 문서 모음에서 벗어나, 각 기록이 서로 연결되어 프로젝트의 Context를 복원할 수 있는 구조로 발전하였다.
+
+### 의미
+
+이번 변화는 ONA의 **Memory System Architecture가 공식적으로 정리된 사건**이다.
+
+ONA의 핵심 방향인:
+
+```text
+Structure
+↓
+Record
+↓
+Connection
+↓
+Context Recovery
+↓
+Continuous Collaboration
+```
+
+을 문서 구조에 반영하였다.
+
+**ONA Memory System v2.0 탄생.**
+
+2026-08-08 — ONA Memory System v2.0 구조 정리
+
+ONA_MEMORY_BOOK의 문서 역할과 기록 영역을 재구성하고, 00_START부터 07_APPENDIX까지의 계층 구조를 정립했다. 기존 appendix, conversations, daily_memory 등의 기록 영역을 역할에 맞게 재배치하여 새로운 AI가 프로젝트 맥락을 안정적으로 복원할 수 있는 기반을 마련했다.
+
+🌱 Made with ❤️ by Sage & ONA AI
