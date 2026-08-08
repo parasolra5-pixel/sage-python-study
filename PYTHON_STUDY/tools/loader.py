@@ -1,4 +1,5 @@
 import json
+import sys
 from pathlib import Path
 
 
@@ -29,7 +30,8 @@ def find_topic(topic_name):
 
 
 if __name__ == "__main__":
-    topic = find_topic("integer")
+    topic_name = sys.argv[1] if len(sys.argv) > 1 else "integer"
+    topic = find_topic(topic_name)
 
     if topic is None:
         print("Topic을 찾을 수 없습니다.")
