@@ -1,4 +1,5 @@
 import argparse
+import ast
 import json
 import re
 from pathlib import Path
@@ -127,7 +128,26 @@ def validate_metadata(metadata):
             )
         if not FILE_PATTERN.fullmatch(example["file"]):
             raise ValueError("metadata 예제 file 형식이 올바르지 않습니다.")
+def validate_python_files(target_path, examples):
+    for example in sorted(examples, key=lambda item: item["order"]):
+        file_path = target_path / example["file"]
 
+        if not file_path.exists():
+            raise FileNotFoundError(
+                f"예제 파일이 존재하지 않습니다: {file_path}"
+            )
+
+        source = file_path.read_text(encoding="utf-8")
+
+        try:
+            ast.parse(source, filename=str(file_path))
+        except SyntaxError as error:
+            raise ValueError(
+                f"Python 문법 오류: {file_path}\n"
+                f"{error}"
+            ) from error
+
+        print(f"문법 검사 통과: {file_path}")
 
 def create_python_files(target_path, examples):
     for example in sorted(examples, key=lambda item: item["order"]):
@@ -243,10 +263,10 @@ def create_structure(template_path):
     target_path.mkdir(parents=True, exist_ok=True)
 
     create_python_files(target_path, data["examples"])
+    validate_python_files(target_path, data["examples"])
     create_readme(target_path, data)
     create_metadata(target_path, metadata)
     update_index(target_path, metadata)
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Create an ONA Micro Example Topic.")

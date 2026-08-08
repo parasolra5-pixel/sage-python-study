@@ -5,10 +5,7 @@
   "title": "정수",
   "description": "정수 값을 만들고 기본 계산을 하는 예제입니다.",
   "level": "beginner",
-  "prerequisites": [
-    "variables",
-    "operators"
-  ],
+  "prerequisites": ["variables", "operators"],
   "learning_objectives": [
     "정수 값을 변수에 저장할 수 있다.",
     "정수로 기본 계산을 할 수 있다."
@@ -30,7 +27,7 @@
       "title": "정수 계산하기",
       "goal": "정수로 더하기와 곱하기를 할 수 있다.",
       "interactive": false,
-      "starter_code": "# 정수 계산하기\n\napples = 3\n+more_apples = 2\n\nprint(\"사과 합계:\", apples + more_apples)\nprint(\"사과 두 배:\", apples * 2)\n"
+      "starter_code": "# 정수 계산하기\n\napples = 3\nmore_apples = 2\n\nprint(\"사과 합계:\", apples + more_apples)\nprint(\"사과 두 배:\", apples * 2)\n"
     }
   ]
 }
