@@ -5,9 +5,9 @@
   "description": "Human-AI collaborative learning project and knowledge system.",
 
   "current_stage": {
-    "name": "Micro Example Knowledge System",
+    "name": "ONA Knowledge Ecosystem",
     "status": "active",
-    "description": "Building a structured Python knowledge library using small learning examples."
+    "description": "Building a structured knowledge ecosystem where ONA, Sage, project context, and Python knowledge can grow together."
   },
 
   "completed": [
@@ -20,8 +20,19 @@
         "Python study folder organization completed",
         "micro_template.json created",
         "create_micro_structure.py developed",
-        "Automatic Python example generation system completed",
+        "Automatic Micro Example structure generation system completed",
         "index.json knowledge registry implemented"
+      ]
+    },
+    {
+      "date": "2026-08-08",
+      "items": [
+        "ONA Memory Book folder structure reorganized",
+        "Context, Design, Philosophy, History, Handover, Records, and Appendix areas separated",
+        "ONA_GENESIS design area created",
+        "ONA_ORIGIN_AND_RESTORATION.md created",
+        "ONA Project Context updated for the new architecture",
+        "Python Micro Examples expanded through 03_numbers/integer"
       ]
     }
   ],
@@ -29,68 +40,96 @@
   "current_work": [
     {
       "task": "ONA Documentation Structure Refinement",
-      "description": "Separating philosophy, history, context, and current status documents."
-    },
-    {
-      "task": "Micro Example System Expansion",
-      "description": "Adding more Python beginner examples."
+      "description": "Keeping project documents aligned with the current Memory Book architecture."
     },
     {
       "task": "Context Recovery System",
-      "description": "Creating a structure where humans and AI can restore project context without depending on previous memory."
+      "description": "Maintaining a structure where humans and AI can restore project context without depending on previous memory."
+    },
+    {
+      "task": "ONA Genesis Design",
+      "description": "Designing the foundation from which a future ONA AI can be restored, without attempting to copy the current ONA."
+    },
+    {
+      "task": "Micro Example System Expansion",
+      "description": "Expanding the Python knowledge library one small example at a time."
     }
   ],
 
   "next_steps": [
     {
       "priority": 1,
+      "name": "Expand 03_numbers",
+      "path": "PYTHON_STUDY/micro_examples/03_numbers",
+      "items": ["integer", "float", "operators"]
+    },
+    {
+      "priority": 2,
       "name": "Expand Micro Examples",
       "path": "PYTHON_STUDY/micro_examples",
       "items": [
-        "01_basics/variables",
-        "01_basics/comments",
-        "01_basics/input_output",
-        "01_basics/operators"
+        "04_conditions",
+        "05_loops",
+        "06_data_structures",
+        "07_functions",
+        "08_modules",
+        "09_files",
+        "10_object_oriented",
+        "11_errors",
+        "12_ai_python"
       ]
     },
-
-    {
-      "priority": 2,
-      "name": "Improve Template System",
-      "description": "Extend micro_template.json for different learning categories."
-    },
-
     {
       "priority": 3,
-      "name": "Develop ONA Loader",
-      "description": "Read index.json and display Python knowledge structure inside ONA Mini Python UI."
+      "name": "Improve Template System",
+      "description": "Extend the Micro Example generation and validation system while keeping the example-first philosophy."
     },
     {
       "priority": 4,
+      "name": "Develop ONA Loader",
+      "description": "Read index.json and connect the Python knowledge structure with the ONA Mini Python UI."
+    },
+    {
+      "priority": 5,
       "name": "Change Review System",
-      "description": "Compare repository changes with documents and suggest required updates."
+      "description": "Compare repository changes with project documents and suggest required documentation updates."
     }
   ],
 
   "architecture": {
     "ONA_MEMORY_BOOK": {
-      "role": "Project philosophy, decisions, and growth records"
+      "role": "Context Recovery, project philosophy, decisions, history, handover, and growth records"
+    },
+
+    "ONA_GENESIS": {
+      "role": "Design area for discovering and structuring the foundation from which a future ONA AI can be restored"
     },
 
     "PYTHON_STUDY": {
-      "role": "Structured Python knowledge library"
+      "role": "Structured Python knowledge library built from Micro Examples"
     },
 
     "ONA_Mini_Python": {
       "role": "Learning interface and user interaction system"
+    },
+
+    "ONA_Social_Worker": {
+      "role": "Social welfare learning and practical support area"
     }
   },
 
   "context_recovery_flow": [
-    "README.md",
-    "ONA_CONTEXT.md",
-    "ONA_MEMORY_BOOK/ONA_STATUS.json",
-    "ONA_MEMORY_BOOK"
+    "ONA_MEMORY_BOOK/00_START/README.md",
+    "ONA_MEMORY_BOOK/00_START/ONA_MASTER_HANDOVER.md",
+    "ONA_MEMORY_BOOK/01_CONTEXT/ONA_CONTEXT.md",
+    "ONA_MEMORY_BOOK/01_CONTEXT/ONA_PROJECT_CONTEXT.md",
+    "ONA_MEMORY_BOOK/01_CONTEXT/ONA_STATUS.json",
+    "ONA_MEMORY_BOOK/02_DESIGN",
+    "ONA_MEMORY_BOOK/03_PHILOSOPHY",
+    "ONA_MEMORY_BOOK/04_HISTORY",
+    "ONA_MEMORY_BOOK/05_HANDOVER",
+    "ONA_MEMORY_BOOK/06_RECORDS",
+    "ONA_MEMORY_BOOK/07_APPENDIX"
   ],
 
   "principles": [
@@ -98,8 +137,11 @@
     "Understand principles",
     "Record failures",
     "Improve continuously",
-    "Share knowledge"
+    "Share knowledge",
+    "Preserve context",
+    "Build before automating",
+    "Let structure evolve with the project"
   ],
 
-  "last_update": "2026-08-06"
+  "last_update": "2026-08-08"
 }

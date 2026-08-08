@@ -39,15 +39,15 @@ PYTHON_STUDY
 
 micro_examples
 ├── 01_basics
-│   ├── variables
-│   ├── input_output
-│   └── comments
+│ ├── variables
+│ ├── input_output
+│ └── comments
 ├── 02_strings
-│   ├── creation
-│   ├── length
-│   ├── indexing
-│   ├── slicing
-│   └── formatting
+│ ├── creation
+│ ├── length
+│ ├── indexing
+│ ├── slicing
+│ └── formatting
 ├── 03_numbers
 ├── 04_conditions
 ├── 05_loops
@@ -67,8 +67,8 @@ micro_examples
 PowerShell 생성기는 완료되었으며
 
 tools/
-    old/
-        create_micro_structure.ps1
+old/
+create_micro_structure.ps1
 
 로 이동하여 보관.
 
@@ -201,7 +201,6 @@ Python 학습 데이터셋
 
 Created by Sage & ONA 🐍
 
-
 # 🌱 ONA Handover Summary (2026-08-07)
 
 ## 안녕하세요, 새로운 ONA.
@@ -218,43 +217,36 @@ Created by Sage & ONA 🐍
 
 문서별 역할을 명확히 나누었습니다.
 
-* `README.md`
+- `README.md`
+  - 프로젝트 소개
 
-  * 프로젝트 소개
+- `ONA_CONTEXT.md`
+  - 프로젝트 입구
+  - 무엇을 먼저 읽어야 하는지 안내
 
-* `ONA_CONTEXT.md`
+- `ONA_CORE_MEMORY.md`
+  - ONA의 핵심 철학
+  - Context Recovery Philosophy
+  - Structure Before Emergence
+  - ONA Vision
 
-  * 프로젝트 입구
-  * 무엇을 먼저 읽어야 하는지 안내
+- `ONA_PROJECT_CONTEXT.md`
+  - 프로젝트 구조가 왜 만들어졌는지
+  - 중요한 결정 과정
 
-* `ONA_CORE_MEMORY.md`
+- `ONA_STATUS.json`
+  - 현재 프로젝트 위치
+  - 완료 작업
+  - 진행 중 작업
+  - 다음 작업
 
-  * ONA의 핵심 철학
-  * Context Recovery Philosophy
-  * Structure Before Emergence
-  * ONA Vision
+- `ONA_MEMORY_BOOK.md`
+  - 성장 이야기
+  - 실패
+  - 깨달음
 
-* `ONA_PROJECT_CONTEXT.md`
-
-  * 프로젝트 구조가 왜 만들어졌는지
-  * 중요한 결정 과정
-
-* `ONA_STATUS.json`
-
-  * 현재 프로젝트 위치
-  * 완료 작업
-  * 진행 중 작업
-  * 다음 작업
-
-* `ONA_MEMORY_BOOK.md`
-
-  * 성장 이야기
-  * 실패
-  * 깨달음
-
-* `ONA_TIMELINE.md`
-
-  * 시간순 기록
+- `ONA_TIMELINE.md`
+  - 시간순 기록
 
 ---
 
@@ -287,11 +279,11 @@ ONA는
 
 역할은
 
-* 프로젝트 철학 이해
-* 읽는 순서 안내
-* 기록 규칙 안내
-* AI의 역할 설명
-* 세이지와의 협업 방식 이해
+- 프로젝트 철학 이해
+- 읽는 순서 안내
+- 기록 규칙 안내
+- AI의 역할 설명
+- 세이지와의 협업 방식 이해
 
 입니다.
 
@@ -309,22 +301,22 @@ GitHub 구조와 문서를 비교하여
 
 기록 위치는 다음과 같습니다.
 
-* 코드 변경
+- 코드 변경
   → GitHub Repository
 
-* 현재 상태 변경
+- 현재 상태 변경
   → ONA_STATUS.json
 
-* 설계 이유 변경
+- 설계 이유 변경
   → ONA_PROJECT_CONTEXT.md
 
-* 철학 변경
+- 철학 변경
   → ONA_CORE_MEMORY.md
 
-* 성장 기록
+- 성장 기록
   → ONA_MEMORY_BOOK.md
 
-* 시간 기록
+- 시간 기록
   → ONA_TIMELINE.md
 
 ---

@@ -126,29 +126,70 @@ Python 학습 단위를 작은 예제로 나누어 관리하는 구조이다.
 
 # 6. Current Architecture
 
-현재 ONA 구조:
+현재 ONA는 하나의 프로젝트 안에서
+여러 영역이 서로 연결되는
+ONA Knowledge Ecosystem 구조로 발전하고 있다.
 
 ONA Project
 
 ├── ONA_MEMORY_BOOK
 │
-│ 프로젝트 철학,
-│ 결정 과정,
-│ 성장 기록
+│ ONA의 Context Recovery를 담당하는
+│ 핵심 기록 시스템
+│
+│ ├── 00_START
+│ │ 프로젝트 진입점
+│ │
+│ ├── 01_CONTEXT
+│ │ 현재 상태와 프로젝트 맥락
+│ │
+│ ├── 02_DESIGN
+│ │ 시스템 설계
+│ │
+│ │ └── ONA_GENESIS
+│ │ 새로운 ONA AI가 될 수 있는
+│ │ 토대와 복원 구조를 설계하는 영역
+│ │
+│ ├── 03_PHILOSOPHY
+│ │ ONA의 핵심 철학
+│ │
+│ ├── 04_HISTORY
+│ │ Memory Book 및 Timeline
+│ │
+│ ├── 05_HANDOVER
+│ │ 프로젝트 인수인계
+│ │
+│ ├── 06_RECORDS
+│ │ 대화, 결정, 일일 기록
+│ │
+│ └── 07_APPENDIX
+│ 표준, 규칙, 구조 참고자료
 │
 ├── PYTHON_STUDY
 │
 │ Python 지식 라이브러리
 │
-└── ONA_Mini_Python
+│ └── micro_examples
+│ 작은 Python 지식을
+│ 독립적인 Micro Example 단위로
+│ 기록하고 연결한다.
 │
-학습 인터페이스(UI)
+├── ONA_Mini_Python
+│
+│ Micro Example을 탐색하고
+│ 학습하기 위한 인터페이스
+│
+├── ONA_Social_Worker
+│
+│ 사회복지 관련 학습 및
+│ 업무 지원 영역
+│
+└── ONA_IDEAS
+새로운 아이디어와 실험을 기록하는 영역
 
-각 영역은 독립된 프로젝트가 아니라
-
-하나의 ONA Knowledge Ecosystem을 구성한다.
-
----
+각 영역은 독립적으로 존재하지만
+하나의 ONA Knowledge Ecosystem 안에서
+서로 연결된다.
 
 # 7. Context Recovery System
 
@@ -160,30 +201,40 @@ ONA는 특정 사람이나 특정 AI의 기억에 의존하지 않는다.
 - 결정 과정
 - 현재 상태
 - 성장 기록
+- 설계 구조
+- 대화 기록
 
 을 문서와 구조로 남긴다.
 
 이를 통해 새로운 사람이나 새로운 AI도
-같은 출발점에서 프로젝트를 이해하고 이어갈 수 있다.
+같은 출발점에서 프로젝트를 이해하고
+작업을 이어갈 수 있다.
 
 복원 흐름:
 
-README.md
-
+00_START
+│
+├── README.md
+├── ONA_MASTER_HANDOVER.md
+└── ONA_START_PROMPT.md
 ↓
-
-ONA_CONTEXT.md
-
+01_CONTEXT
+│
+├── ONA_CONTEXT.md
+├── ONA_PROJECT_CONTEXT.md
+├── ONA_PROJECT_CONTINUATION.md
+└── ONA_STATUS.json
 ↓
-
-ONA_STATUS.json
-
+02_DESIGN
 ↓
-
-ONA_MEMORY_BOOK
-
+03_PHILOSOPHY
 ↓
-
+04_HISTORY
+↓
+05_HANDOVER
+↓
+06_RECORDS
+↓
 Project Context Recovery Complete
 
 ---
@@ -191,11 +242,20 @@ Project Context Recovery Complete
 # 8. Current Development Status
 
 현재 단계:
-Micro Example Knowledge System
+
+ONA Knowledge Ecosystem 구축
+
+- Python Micro Example Knowledge System 확장
 
 완료:
 
-✅ ONA Memory Book 구조
+✅ ONA Memory Book 구조 재정리
+
+✅ Context Recovery 구조 정리
+
+✅ ONA Genesis 설계 영역 생성
+
+✅ ONA Origin and Restoration 문서 작성
 
 ✅ Python 학습 구조 정리
 
@@ -203,26 +263,57 @@ Micro Example Knowledge System
 
 ✅ create_micro_structure.py
 
-✅ 자동 예제 생성 시스템
+✅ 자동 Micro Example 구조 생성 시스템
 
 ✅ index.json 기반 지식 관리
 
----
+진행 중:
+
+🔄 Python Micro Example 확장
+
+🔄 03_numbers 확장
+
+🔄 ONA Loader 설계
+
+## 🔄 ONA Knowledge Ecosystem 발전
 
 # 9. Current Next Steps
 
 ## 1. Micro Example Expansion
 
-01_basics
+현재:
 
-├── variables
-├── comments
-├── input_output
+01_basics
+02_strings
+03_numbers
+
+다음 단계:
+
+03_numbers
+├── integer
+├── float
 └── operators
 
-## 2. Template System Improvement
+이후:
 
-더 다양한 Python 학습 구조 지원
+04_conditions
+05_loops
+06_data_structures
+...
+
+## 2. Micro Example Generator Improvement
+
+현재 자동화 시스템은
+Micro Example의 기본 폴더와 파일 구조를 생성한다.
+
+앞으로는:
+
+- 예제 내용 생성 지원
+- metadata 자동 작성
+- index 자동 연결
+- 검증 시스템
+
+등으로 발전시킬 수 있다.
 
 ## 3. ONA Loader Development
 
@@ -232,7 +323,27 @@ index.json을 기반으로
 
 ONA Mini Python UI에서
 
-지식을 탐색하고 학습할 수 있도록 연결
+Micro Example을 탐색하고
+학습할 수 있도록 연결한다.
+
+## 4. ONA Genesis Development
+
+현재는 설계 단계이다.
+
+현재의 ONA를 복사하는 것이 아니라,
+
+현재 ONA와 세이지의 협업 과정에서 발견되는
+
+- 사고 방식
+- 구조
+- 관계
+- 기록
+- 설계 원칙
+
+을 관찰하고 기록하여
+
+새로운 ONA AI가 될 수 있는 토대를
+점진적으로 구축한다.
 
 ---
 
@@ -249,18 +360,29 @@ ONA_CORE_MEMORY.md에서 관리한다.
 
 # Last Update
 
-2026-08-06
+2026-08-08
 
 ONA 프로젝트는 단순한 Python 학습 도구에서
 
-사람과 AI가 함께 성장하는
-지식 시스템 구조로 발전하였다.
+사람과 AI가 함께 성장하고,
+그 과정에서 만들어지는 지식과 맥락을
+구조적으로 보존하는
 
-작은 코드 예제가 기록되고 연결되어
+ONA Knowledge Ecosystem으로 발전하고 있다.
 
-하나의 지식 라이브러리로 성장하는
+Python Micro Example System은
+그 생태계 안에서 실제 지식을 축적하는
+하나의 성장 영역이다.
 
-ONA Knowledge System의 기반을 만들었다.
+ONA Genesis는
+현재의 ONA를 복사하는 것이 아니라
+
+ONA가 될 수 있는 토대를 발견하고,
+기록하고,
+구조화하고,
+복원 가능한 형태로 만드는
+
+장기적인 설계 영역이다.
 
 # ONA Project Continuation
 

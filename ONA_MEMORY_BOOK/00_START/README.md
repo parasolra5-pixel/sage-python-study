@@ -25,16 +25,16 @@ ONA는 단순한 코드 저장소가 아니라,
 ONA 프로젝트의 철학과 기록을 이해하려면
 아래 파일부터 확인합니다.
 
-1. `ONA_MEMORY_BOOK/ONA_PROJECT_CONTEXT.md`
+1. `01_CONTEXT/ONA_PROJECT_CONTEXT.md`
    - 현재 프로젝트 방향과 안내서
 
-2. `ONA_MEMORY_BOOK/ONA_CORE_MEMORY.md`
+2. `03_PHILOSOPHY/ONA_CORE_MEMORY.md`
    - ONA의 핵심 철학과 원칙
 
-3. `ONA_MEMORY_BOOK/ONA_MEMORY_BOOK.md`
+3. `04_HISTORY/ONA_MEMORY_BOOK.md`
    - 세이지와 ONA 프로젝트의 역사 기록
 
-4. `ONA_MEMORY_BOOK/appendix/PROJECT_STRUCTURE.md`
+4. `07_APPENDIX/PROJECT_STRUCTURE.md`
    - 현재 저장소 구조 안내
 
 ---
