@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "category": "03_numbers",
+  "topic": "operators",
+  "title": "연산자",
+  "description": "Python의 기본 산술 연산자를 이해하는 예제입니다.",
+  "level": "beginner",
+  "prerequisites": [
+    "variables"
+  ],
+  "learning_objectives": [
+    "기본 산술 연산자의 종류를 이해할 수 있다.",
+    "덧셈, 뺄셈, 곱셈, 나눗셈을 사용할 수 있다."
+  ],
+  "examples": [
+    {
+      "order": 1,
+      "id": "basic_operators",
+      "file": "001_basic_operators.py",
+      "title": "기본 연산자 사용하기",
+      "goal": "기본 산술 연산자를 사용해 계산할 수 있다.",
+      "interactive": false
+    }
+  ]
+}

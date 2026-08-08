@@ -130,5 +130,15 @@
       "001_create_float.py",
       "002_float_calculation.py"
     ]
+  },
+  {
+    "category": "03_numbers",
+    "topic": "operators",
+    "description": "Python의 기본 산술 연산자를 이해하는 예제입니다.",
+    "level": "beginner",
+    "path": "03_numbers/operators",
+    "files": [
+      "001_basic_operators.py"
+    ]
   }
 ]
