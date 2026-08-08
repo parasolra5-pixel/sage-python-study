@@ -168,10 +168,6 @@ def create_python_files(target_path, examples):
 def create_readme(target_path, data):
     file_path = target_path / "README.md"
 
-    if file_path.exists():
-        print(f"이미 존재: {file_path}")
-        return
-
     prerequisites = data["prerequisites"] or ["없음"]
     examples = sorted(data["examples"], key=lambda item: item["order"])
 
@@ -197,9 +193,12 @@ def create_readme(target_path, data):
         "",
     ]
 
-    file_path.write_text("\n".join(lines), encoding="utf-8")
-    print(f"README 생성 완료: {file_path}")
+    file_path.write_text(
+        "\n".join(lines),
+        encoding="utf-8",
+    )
 
+    print(f"README 생성/갱신 완료: {file_path}")
 
 def create_metadata(target_path, metadata):
     file_path = target_path / "metadata.json"
