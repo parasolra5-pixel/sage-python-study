@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "category": "03_numbers",
+  "topic": "float",
+  "title": "실수",
+  "description": "실수 값을 만들고 기본 계산을 하는 예제입니다.",
+  "level": "beginner",
+  "prerequisites": [
+    "variables",
+    "operators",
+    "integer"
+  ],
+  "learning_objectives": [
+    "실수 값을 변수에 저장할 수 있다.",
+    "실수로 기본 계산을 할 수 있다."
+  ],
+  "examples": [
+    {
+      "order": 1,
+      "id": "create_float",
+      "file": "001_create_float.py",
+      "title": "실수 만들기",
+      "goal": "실수 값을 변수에 저장하고 출력한다.",
+      "interactive": false
+    },
+    {
+      "order": 2,
+      "id": "float_calculation",
+      "file": "002_float_calculation.py",
+      "title": "실수 계산하기",
+      "goal": "실수로 기본 계산을 할 수 있다.",
+      "interactive": false
+    }
+  ]
+}
