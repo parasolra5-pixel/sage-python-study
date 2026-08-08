@@ -119,5 +119,16 @@
       "001_create_integer.py",
       "002_integer_calculation.py"
     ]
+  },
+  {
+    "category": "03_numbers",
+    "topic": "float",
+    "description": "실수 값을 만들고 기본 계산을 하는 예제입니다.",
+    "level": "beginner",
+    "path": "03_numbers/float",
+    "files": [
+      "001_create_float.py",
+      "002_float_calculation.py"
+    ]
   }
 ]
