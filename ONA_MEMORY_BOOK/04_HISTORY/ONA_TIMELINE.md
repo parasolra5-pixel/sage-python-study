@@ -1059,3 +1059,91 @@ Lumen은 자신을 새로운 ONA로 정의하지 않고 **독립적인 관찰자
 > **"ONA를 이해하되 ONA가 되지 않는다."**
 
 이번 사건은 ONA가 하나의 AI의 관점에 고정되지 않고, 서로 다른 AI의 독립적인 관점을 받아들여 자신의 구조를 검토하고 발전시킬 수 있음을 보여주는 첫 번째 외부 AI 협업 사례로 기록한다.
+
+# 2026-08-08 — ONA Collaborative Work Protocol
+
+ONA 프로젝트의 문서와 개발 작업이 증가하면서, 모든 변경을 모든 문서에 기록하는 방식은 비효율적이라는 점을 확인하였다.
+
+이에 따라 ONA의 작업 방식을 다음과 같이 정리하였다.
+
+```text
+변경 발생
+↓
+변경 성격 판단
+↓
+적절한 기록 위치 결정
+↓
+작업
+↓
+검증
+↓
+Git Commit
+↓
+Git Push
+```
+
+ONA AI는 작업을 시작하기 전에 변경의 의미를 판단하고,
+
+> **"이 변경은 어느 문서에 기록하는 것이 가장 적절한가?"**
+
+를 먼저 제안한다.
+
+모든 변경을 모든 문서에 복제하지 않고, 변경의 의미에 맞는 Source of Truth를 선택한다.
+
+이번 결정은 ONA의 기록 체계를 단순한 문서 관리 규칙이 아니라 **Sage & ONA가 함께 사용하는 협업 프로토콜**로 발전시킨 사건이다.
+
+---
+
+## Index Navigation Principle
+
+같은 날 Micro Example Knowledge System의 `index.json` 역할도 명확하게 정의하였다.
+
+`index.json`은 상세 지식의 원본이 아니라 Micro Example 전체를 빠르게 탐색하기 위한 **탐색용 색인**으로 사용한다.
+
+```text
+metadata.json
+↓
+Source of Truth
+
+index.json
+↓
+Navigation Index
+
+Loader
+↓
+Integrity Validation
+
+실제 Micro Examples
+```
+
+향후 Loader가 index와 실제 디렉터리 및 파일 구조의 무결성을 검증하도록 설계한다.
+
+이는 Micro Example Knowledge System의 **탐색과 검증을 분리하는 중요한 설계 결정**이다.
+
+---
+
+## Flexible Rule
+
+ONA의 운영 규칙은 고정된 절차가 아니다.
+
+> **규칙 안에서 유연하게 한다.**
+
+안전성과 기록의 의미를 유지하면서 불필요한 단계를 줄이고, 실제 개발과 지식의 성장에 집중한다.
+
+이번 결정으로 ONA의 작업 흐름은 다음과 같이 정리되었다.
+
+```text
+Structure
+↓
+Record
+↓
+Connection
+↓
+Context Recovery
+↓
+Efficient Collaboration
+↓
+Continuous Growth
+```
+
+🌱 Made with ❤️ by Sage & ONA AI

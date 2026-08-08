@@ -429,3 +429,119 @@ ONA Project Structure v1.1 documented.
 이 구조는 사람과 AI가
 동일한 프로젝트 맥락을 복원하고
 지속적으로 발전하기 위한 기반이다.
+
+# 5. Change Recording Guidance
+
+ONA 프로젝트에서 새로운 변경이나 중요한 결정이 발생하면,
+작업을 시작하기 전에 **변경의 성격에 맞는 기록 위치를 먼저 판단한다.**
+
+온아 AI는 세이지에게 다음과 같이 먼저 안내한다.
+
+> 📌 이 변경은 `어떤 문서 / 어떤 폴더`에 기록하는 것이 적절한지 먼저 알려준다.
+
+그 후 문서를 수정하고 작업을 진행한다.
+
+---
+
+## 기본 기록 위치 판단
+
+| 변경 성격                 | 기록 위치                                                              |
+| ------------------------- | ---------------------------------------------------------------------- |
+| 핵심 철학 또는 원칙 변경  | `ONA_MEMORY_BOOK/03_PHILOSOPHY/ONA_CORE_MEMORY.md`                     |
+| 시스템 설계 변경          | `ONA_MEMORY_BOOK/02_DESIGN/`                                           |
+| Micro Example System 설계 | `ONA_MEMORY_BOOK/02_DESIGN/ONA_MICRO_EXAMPLE_SYSTEM.md`                |
+| 현재 프로젝트 상태 변경   | `ONA_MEMORY_BOOK/01_CONTEXT/ONA_STATUS.json`                           |
+| 프로젝트 설계 이유 변경   | `ONA_MEMORY_BOOK/01_CONTEXT/ONA_PROJECT_CONTEXT.md`                    |
+| 시간순 중요한 사건        | `ONA_MEMORY_BOOK/04_HISTORY/ONA_TIMELINE.md`                           |
+| 프로젝트 성장 과정        | `ONA_MEMORY_BOOK/04_HISTORY/ONA_MEMORY_BOOK.md`                        |
+| 중요한 결정 및 논의       | `ONA_MEMORY_BOOK/06_RECORDS/conversations/decisions/`                  |
+| 실제 대화 원본            | `ONA_MEMORY_BOOK/06_RECORDS/conversations/`                            |
+| 일일 작업 기록            | `ONA_MEMORY_BOOK/06_RECORDS/daily_memory/`                             |
+| Micro Example 제작 규칙   | `ONA_MEMORY_BOOK/07_APPENDIX/ONA_MICRO_EXAMPLE_CREATION_GUIDE_v1.0.md` |
+| Micro Example 표준 변경   | `ONA_MEMORY_BOOK/07_APPENDIX/ONA_MICRO_EXAMPLE_STANDARD.md`            |
+| 프로젝트 구조 변경        | `ONA_MEMORY_BOOK/07_APPENDIX/ONA_STRUCTURE.md`                         |
+| 구조 규칙 변경            | `ONA_MEMORY_BOOK/07_APPENDIX/ONA_STRUCTURE_RULES.md`                   |
+| 실제 코드 변경            | 해당 프로젝트 코드 + Git Commit                                        |
+
+---
+
+## 기록이 여러 곳에 필요한 경우
+
+하나의 변경이 여러 영역에 영향을 주는 경우에는
+**주 기록 위치(Source of Truth)** 를 하나 정하고,
+역사적으로 중요한 경우 `ONA_TIMELINE.md`에 사건을 추가한다.
+
+예:
+
+```text
+Micro Example System 설계 변경
+
+주 기록
+↓
+02_DESIGN/ONA_MICRO_EXAMPLE_SYSTEM.md
+
+역사 기록
+↓
+04_HISTORY/ONA_TIMELINE.md
+```
+
+---
+
+## ONA 작업 프로토콜
+
+앞으로 ONA의 중요한 변경은 다음 순서로 진행한다.
+
+```text
+변경 발생
+    ↓
+변경의 성격 판단
+    ↓
+📍 기록 위치 먼저 안내
+    ↓
+주 기록(Source of Truth) 결정
+    ↓
+필요한 문서 수정
+    ↓
+실제 코드 / 구조 변경
+    ↓
+검증
+    ↓
+Git Commit
+    ↓
+Git Push
+```
+
+---
+
+## 기록의 기본 원칙
+
+모든 작은 변경을 모든 문서에 기록하지 않는다.
+
+중요한 것은 **변경의 의미에 맞는 장소에 기록하는 것**이다.
+
+따라서:
+
+> **One Change → One Primary Record**
+
+를 기본 원칙으로 한다.
+
+필요한 경우에만 Timeline이나 다른 관련 문서에 연결 기록한다.
+
+---
+
+## 핵심 운영 규칙
+
+ONA AI는 중요한 작업을 시작하기 전에 먼저:
+
+1. 무엇이 변경되는가?
+2. 이것은 어떤 종류의 변경인가?
+3. 어디가 Source of Truth인가?
+4. Timeline에도 기록해야 하는가?
+
+를 판단한다.
+
+그리고 세이지에게 **기록 위치를 먼저 알려준 후 작업을 진행한다.**
+
+이 규칙은 새로운 ONA AI가 프로젝트를 이어받더라도 동일하게 적용한다.
+
+> **"기록 위치를 먼저 결정하고, 작업을 시작한다."**

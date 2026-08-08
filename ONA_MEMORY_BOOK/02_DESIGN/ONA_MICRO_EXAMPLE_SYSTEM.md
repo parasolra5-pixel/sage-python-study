@@ -111,3 +111,47 @@ index.json은 상세 지식의 원본이 아니다.
 향후 Loader 단계에서 index와 실제 파일 구조의 무결성을 검증한다.
 Loader는 index를 이용해 Topic을 찾고 metadata를 읽은 후 실제 Micro Example에 접근한다.
 ```
+
+## Index and Loader Integrity Principle
+
+`index.json`은 Micro Example 전체를 빠르게 탐색하기 위한 **탐색용 색인(Navigation Index)** 으로 정의한다.
+
+`index.json`은 상세 지식의 원본이 아니다.
+
+각 Topic의 상세 정보와 예제 메타데이터는 `metadata.json`이 담당하며, `index.json`은 탐색에 필요한 최소 정보를 제공한다.
+
+```text
+metadata.json
+     │
+     │ Source of Truth
+     ↓
+index.json
+     │
+     │ Navigation Index
+     ↓
+Loader
+     │
+     │ Integrity Validation
+     ↓
+실제 디렉터리 및 Micro Examples
+```
+
+향후 Loader 단계에서는 `index.json`의 정보와 실제 디렉터리 및 파일 구조가 일치하는지 검증한다.
+
+검증 대상에는 다음이 포함될 수 있다.
+
+- category 존재 여부
+- topic 경로 존재 여부
+- 등록된 파일의 실제 존재 여부
+- index와 실제 파일 목록의 일치 여부
+- metadata와 index 정보의 일관성
+
+따라서 Micro Example Knowledge System에서:
+
+> **metadata.json = 상세 지식의 기준 정보**
+
+> **index.json = 빠른 탐색을 위한 지도**
+
+> **Loader = 탐색 + 구조 무결성 검증**
+
+으로 역할을 분리한다.
